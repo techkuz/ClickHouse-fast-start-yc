@@ -132,7 +132,7 @@ clickhouse-client \
         item_id,
         count()                                             AS listens,
         round(avg(played_ratio_pct), 1)                    AS avg_completion_pct,
-        round(avg(track_length_seconds) / 60.0, 2)         AS avg_duration_min
+        any(track_length_seconds)                           AS track_length_seconds
     FROM listens
     GROUP BY item_id
     ORDER BY listens DESC
