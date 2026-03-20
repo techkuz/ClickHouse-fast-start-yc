@@ -1,6 +1,6 @@
 # 10 способов подключиться к Managed ClickHouse в Yandex Cloud
 
-Материалы вебинара Yandex Cloud.
+Материалы вебинара Yandex Cloud https://www.youtube.com/watch?v=qdaGELCN8fs.
 
 ---
 
