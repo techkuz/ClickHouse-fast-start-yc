@@ -21,6 +21,8 @@
 
 ## Блок 1 — Managed ClickHouse без публичного доступа (через jump-хост)
 
+![Yandex Cloud architecture of infrastructure required for managed ClickHouse through jump host](tf-arch.png "Terraform architecture")
+
 Terraform поднимает:
 - VPC-сеть с подсетями в 3 зонах доступности
 - HA-кластер ClickHouse: 2 узла ClickHouse + 3 узла Keeper
@@ -55,6 +57,9 @@ export JUMP_IP=$(terraform output -raw jump_public_ip)
 ---
 
 ## Блок 2 — Managed ClickHouse с публичным доступом
+
+![Yandex Cloud architecture of infrastructure required for managed ClickHouse accessible through public IP](cli-arch.png "Terraform architecture")
+
 
 Инфраструктура создаётся через YC CLI. Кластер доступен напрямую без jump-хоста.
 
