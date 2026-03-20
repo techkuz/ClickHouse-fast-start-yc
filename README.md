@@ -63,34 +63,18 @@ export JUMP_IP=$(terraform output -raw jump_public_ip)
 
 Инфраструктура создаётся через YC CLI. Кластер доступен напрямую без jump-хоста.
 
-**Дополнительные способы подключения:**
-7. DBeaver — порт 8443, SSL режим STRICT
+**Дополнительные способы подключения:**  
+7. DBeaver — порт 8443, SSL режим STRICT.  
 8. Play UI — встроенный веб-интерфейс `https://<fqdn>:8443/play`
 
 ---
 
 ## Блок 3 — ClickHouse + DataLens
 
-Загрузка датасета Yambda 50M из HuggingFace и визуализация в DataLens.
 
-**Способы подключения:**
-9. DataLens — Connection → ClickHouse
+**Способы подключения:**   
+9. DataLens — Connection → ClickHouse.   
 10. WebSQL (встроенный интерфейс Yandex Cloud Console)
-
-### Загрузка датасета
-
-```bash
-python3 -m venv ~/venv/yambda
-source ~/venv/yambda/bin/activate
-pip install clickhouse-connect pyarrow pandas huggingface_hub tqdm
-
-export CH_HOST="<FQDN кластера>"
-export CH_USER="admin"
-export CH_PASS="<пароль>"
-export CA_CERT="/usr/local/share/ca-certificates/Yandex/RootCA.crt"
-
-python3 load_yambda.py
-```
 
 ---
 
